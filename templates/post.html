@@ -1,0 +1,215 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>{{ title }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+{% endblock head %}
+{% block body %}
+
+<style>
+  /* Style for the button */
+  .bookNowButton {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* Hover effect */
+  .bookNowButton:hover {
+    background-color: navy;
+  }
+
+  /* Media query for smaller screens (adjust as needed) */
+  @media screen and (max-width: 768px) {
+    .bookNowButton {
+      font-size: 14px; /* Decrease font size */
+      padding: 8px 16px; /* Modify padding */
+    }
+  }
+</style>
+
+
+<div class="post centeredHorizontally">
+  <h1 class="title">{{ title }}</h1>
+
+  <div class="bottomBar">
+    <div>
+      <h5>👁️ {{ views }}</h5>
+      <h5>currently In shuttle</h5>
+
+    </div>
+
+  </div>
+<!-- 
+  <h2 class="title " style= "text-align: center; margin-bottom: 20px;">This vehicle goes through the routes</h2> -->
+  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d63046.746932782815!2d7.413269723516673!3d9.025241955074133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x104e0b5fcf7624d5%3A0x2b03f1d1ef382d7f!2sAbuja%20Continental%20Hotel%2C%20ladi%20Kwali%20Street%2C%20Abuja!3m2!1d9.0637367!2d7.484243599999999!4m5!1s0x104e732036038e5d%3A0xdb27d0b19f52c049!2sXCP9%2B7CG%20Aldenco%20Estate%2C%20900107%2C%20Abuja%2C%20Federal%20Capital%20Territory!3m2!1d8.9857403!2d7.4185221!5e0!3m2!1sen!2sng!4v1701187899400!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="bookNowButton">Book Now</a>
+  </div>
+  
+  <div style="text-align: center;">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1859.803694865057!2d7.426249575093579!3d8.991765163512934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x104e732036038e5d%3A0xdb27d0b19f52c049!2sAldenco%20Estate%2C%20XCP9%2B7CG%2C%20Abuja%20900107%2C%20Federal%20Capital%20Territory!3m2!1d8.9857403!2d7.4185221!4m5!1s0x104e737ddb63ee91%3A0x6158fbea4b716e3c!2sDunamis%20International%20Gospel%20Centre%2C%20Galadimawa%2C%20XCQG%2BRPV%2C%201%20Dunamis%20church%2C%20galadimawa%2C%20Galadima!3m2!1d8.9891398!2d7.4270187!5e0!3m2!1sen!2sng!4v1701487905402!5m2!1sen!2sng" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d63046.746932782815!2d7.413269723516673!3d9.025241955074133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x104e0b5fcf7624d5%3A0x2b03f1d1ef382d7f!2sAbuja%20Continental%20Hotel%2C%20ladi%20Kwali%20Street%2C%20Abuja!3m2!1d9.0637367!2d7.484243599999999!4m5!1s0x104e732036038e5d%3A0xdb27d0b19f52c049!2sXCP9%2B7CG%20Aldenco%20Estate%2C%20900107%2C%20Abuja%2C%20Federal%20Capital%20Territory!3m2!1d8.9857403!2d7.4185221!5e0!3m2!1sen!2sng!4v1701187899400!5m2!1sen!2sng"
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+   -->
+  <p class="content">
+    <!-- <h2>Ask questions on the post and be patient while the response is being generated during </h2> -->
+    <!-- <h5>Powered by <a href="https://www.redhat.com">RedHat</a>, <a href="https://www.intel.com">Intel</a> and <a href="https://www.Google.com">Google AI</a>.</h5>
+    <div class="chatbox" id="chatbox"></div> -->
+    
+    <!-- <input type="text" id="message" placeholder="What questions do you have about the topic?">
+    <button id="send">Send</button> -->
+
+
+
+    {{ content|safe }} <br />
+    Tags: {{ tags.replace(",", ", ") }}
+  </p>
+  <div class="bottomBar">
+    <div>
+      <h5>👁️ {{ views }}</h5>
+      <a href="/user/{{ author|lower }}">
+        <h5 class="author">
+          <img class="profilePicture" src="{{ getProfilePicture(author) }}" />{{ author }}
+        </h5>
+      </a>
+    </div>
+    <div class="dateTime">
+      <h5>{{ time }}</h5>
+      <h5 class="date">{{ date }}</h5>
+    </div>
+  </div>
+  {% if author == session["userName"] %}
+  <div class="bottomBar">
+    <form method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <button type="submit" class="btn btnLink textPrimary" name="postDeleteButton">delete</button>
+    </form>
+    <a href="/editpost/{{ id }}" class="btn btnLink textPrimary">edit</a>
+  </div>
+  {% endif %}
+  {% for comment in comments %}
+  <div class="comments">
+    <img class="profilePicture" src="{{ getProfilePicture(comment[3]) }}" />
+    <section class="commentUserNameContainer">
+      <a href="/user/{{ comment[3]|lower }}" class="commentUserName">{{ comment[3] }} :</a>
+    </section>
+    <p class="centeredHorizontally">{{ comment[2] }}</p>
+    {% if session["userName"] == comment[3] %}
+    <form method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <input type="hidden" name="commentID" value="{{ comment[0] }}" />
+      <button type="submit" name="commentDeleteButton">🗑️</button>
+    </form>
+    {% endif %}
+  </div>
+  {% endfor %}
+  <form method="post" class="commentForm">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    {% if session["userName"] %}
+    {{ form.comment(class_="comment") }}
+    <button type="submit" class="btnSubmit">comment</button>
+    {% else %}
+    <style>
+      .commentForm {
+        border: none;
+      }
+      /* style for generative AI  */
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+      .chatbox {
+        height: 400px;
+        overflow: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .message {
+        margin-bottom: 10px;
+      }
+      .user {
+        color: blue;
+      }
+      .bot {
+        color: green;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+      }
+      .copy-button {
+        margin-top: 5px;
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #send {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+    <small>you need <a href="/login/redirect=&post&{{ id }}" class="linkLogin">login</a> for comment</small>
+    {% endif %}
+  </form>
+</div>
+<script>
+    var chatbox = document.getElementById("chatbox");
+    var message = document.getElementById("message");
+    var send = document.getElementById("send");
+
+    // Function to send the message
+    function sendMessage() {
+      var userMessage = message.value;
+      var userDiv = document.createElement("div");
+      userDiv.className = "message user";
+      userDiv.innerHTML = "<strong>You:</strong> " + userMessage;
+      chatbox.appendChild(userDiv);
+
+      message.value = "";
+
+      fetch("/get_response?message=" + encodeURIComponent(userMessage))
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          var botMessage = data.botMessage;
+          var botDiv = document.createElement("div");
+          botDiv.className = "message bot";
+          botDiv.innerHTML = "<strong>Software bot:</strong> " + botMessage;
+          chatbox.appendChild(botDiv);
+
+          chatbox.scrollTop = chatbox.scrollHeight;
+        });
+    }
+
+    // Add an event listener for Enter keypress
+    message.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault(); // Prevent Enter from adding a new line
+        sendMessage(); // Call the sendMessage function
+      }
+    });
+
+    // Add a click event listener for the Send button
+    send.addEventListener("click", sendMessage);
+</script>
+{% endblock body %}
