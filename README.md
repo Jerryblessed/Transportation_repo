@@ -1,4 +1,5 @@
 # [Software bank📜](http://softwarebank-git-jerryblessed-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/)
+# [SArctitectural diagram 📜](https://github.com/Jerryblessed/Transportation_repo/blob/main/images/Transparency.png)
 
 Simple blog app built with Flask.
 <br/>
@@ -6,10 +7,6 @@ Simple blog app built with Flask.
 
 ### [Demo Video 📺](https://youtu.be/-vv_lLoM-lI)
 
-| [Desktop](https://github.com/Jerryblessed/Softwarebank/tree/master/images/desktop) | [Mobile](https://github.com/Jerryblessed/Softwarebank/tree/master/images/mobile) |
-| :-----------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
-|                    ![appDesktop](/images/desktop/light.png)                     |                    ![appMobile](/images/mobile/light.jpeg)                    |
-|                     ![appDesktop](/images/desktop/dark.png)                     |                    ![appMobile](/images/mobile/dark.jpeg)                     |
 
 [click for more images📷](https://github.com/Jerryblessed/Softwarebank/tree/master/images)
 
