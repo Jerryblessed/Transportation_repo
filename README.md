@@ -1,5 +1,5 @@
 # [Software bank📜](http://softwarebank-git-jerryblessed-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/)
-# [SArctitectural diagram 📜](https://github.com/Jerryblessed/Transportation_repo/blob/main/images/Transparency.png)
+# [Arctitectural diagram 📜](https://github.com/Jerryblessed/Transportation_repo/blob/main/images/Transparency.png)
 
 Simple blog app built with Flask.
 <br/>
